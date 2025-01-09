@@ -7,5 +7,8 @@ There is a lot I would change with this project as far as how the code is struct
 
 Give it a download and enjoy! :)
 
+## NOTE!
+I forgot to add the lib folder, so the pubspec.yaml file and assets folder are one level above the rest of the folders/files.
+
 ### Structure
 This app utilizes the MVC (Model-View-Controller) pattern, with a utility folder for routing and common values.
