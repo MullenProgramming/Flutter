@@ -29,133 +29,26 @@ Widget buildItemList(
           : givenList[index];
       final itemCubit = context.read<ItemCubit>();
 
+      // Define bit positions for each category
+      const int urgentBit = 1 << 3; // 8
+      const int importantBit = 1 << 2; // 4
+      const int miscBit = 1 << 1; // 2
+      const int shoppingBit = 1 << 0; // 1
+
       if (selectedCategory == ItemCategory.All) {
-        switch (settingsState.allItemsFilter) {
-          case 0:
-          case 15:
-            if (item.category == ItemCategory.Urgent ||
+        int filterMask = settingsState.allItemsFilter;
+
+        // Check if the item's category bit is set in the filter mask
+        if ((filterMask & urgentBit) != 0 &&
+                item.category == ItemCategory.Urgent ||
+            (filterMask & importantBit) != 0 &&
                 item.category == ItemCategory.Important ||
-                item.category == ItemCategory.Misc ||
+            (filterMask & miscBit) != 0 && item.category == ItemCategory.Misc ||
+            (filterMask & shoppingBit) != 0 &&
                 item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 14:
-            if (item.category == ItemCategory.Urgent ||
-                item.category == ItemCategory.Important ||
-                item.category == ItemCategory.Misc) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 13:
-            if (item.category == ItemCategory.Urgent ||
-                item.category == ItemCategory.Important ||
-                item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 12:
-            if (item.category == ItemCategory.Urgent ||
-                item.category == ItemCategory.Important) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 11:
-            if (item.category == ItemCategory.Urgent ||
-                item.category == ItemCategory.Misc ||
-                item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 10:
-            if (item.category == ItemCategory.Urgent ||
-                item.category == ItemCategory.Misc) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 9:
-            if (item.category == ItemCategory.Shopping ||
-                item.category == ItemCategory.Urgent) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 8:
-            if (item.category == ItemCategory.Urgent) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 7:
-            if (item.category == ItemCategory.Important ||
-                item.category == ItemCategory.Misc ||
-                item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 6:
-            if (item.category == ItemCategory.Important ||
-                item.category == ItemCategory.Misc) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 5:
-            if (item.category == ItemCategory.Shopping ||
-                item.category == ItemCategory.Important) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 4:
-            if (item.category == ItemCategory.Important) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 3:
-            if (item.category == ItemCategory.Misc ||
-                item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 2:
-            if (item.category == ItemCategory.Misc) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          case 1:
-            if (item.category == ItemCategory.Shopping) {
-              log("Filter Value: ${settingsState.allItemsFilter}");
-              return buildSlidableItem(
-                  context, item, itemCubit, onEdit, titleController);
-            }
-            break;
-          default:
-            return Container();
+          log("Filter Value: ${settingsState.allItemsFilter}");
+          return buildSlidableItem(
+              context, item, itemCubit, onEdit, titleController);
         }
       } else if (item.category == selectedCategory) {
         return buildSlidableItem(
