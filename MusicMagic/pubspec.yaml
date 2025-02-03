@@ -1,7 +1,7 @@
-name: music_magic
+name: simply_music
 description: "A simple music app."
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.2+1
 environment:
   sdk: ^3.6.1
 
@@ -21,6 +21,9 @@ dependencies:
   permission_handler: ^11.3.1
   ffmpeg_kit_flutter: ^6.0.3
   sqflite: ^2.4.1
+  flutter_slidable: ^4.0.0
+  image_picker: ^1.1.2
+  font_awesome_flutter: ^10.8.0
 
 dev_dependencies:
   flutter_test:
