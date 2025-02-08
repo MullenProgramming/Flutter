@@ -1,0 +1,39 @@
+# Simply Music App FAQ
+
+## Getting Started
+
+### How do I download and install Simply Music?
+
+Simply Music is available for download on the App Store. Just search for "Simply Music" and click "Get" to download.
+
+### Is Simply Music free?
+
+Yes, Simply Music is completely free to use and does not contain any in-app advertisements or premium features.
+
+## Features
+
+### What can I do with Simply Music?
+
+With Simply Music, you can input the URL of a video and extract the audio from it. This audio file can then be played from within the app, or shared.
+
+### How do I export an audio file?
+
+To export an audio file downloaded to your device, in the "Music" screen (middle option in the bottom navigation bar), tap on an audio file you with to play, and in the next screen that has the audio player controls, in the upper right-hand corner, tap the 3-dot menu icon, and then tap "export audio file".
+
+### How do I edit or delete audio files?
+
+From the main "Music" screen, swipe an audio listing right-to-left to uncover the "Delete" option, or "left-to-right" to uncover the "Edit" option.
+
+## Troubleshooting
+
+### What should I do if the app crashes?
+
+If the app crashes, try restarting it and your device. If the problem persists, please uninstall and reinstall the app, or send a report to the developer at [MulltechSoftware@gmail.com](mailto:MulltechSoftware@gmail.com). 
+
+### I found a bug, where should I report it?
+
+If you've found a bug, please email us at [MulltechSoftware@gmail.com](mailto:MulltechSoftware@gmail.com) with a description of the issue and any relevant screenshots.
+
+## Contact
+
+For further assistance or enquiries, feel free to reach us at [support@email.com](mailto:support@email.com).
